@@ -1,85 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Oreoyum - Software Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oreoyum - Unsere Softwares</title>
     <style>
         body {
             background-color: #121212;
             color: #c9d1d9;
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
-        h1, h2 {
+        h1 {
             color: #58a6ff;
+            font-size: 3rem;
+        }
+        h2 {
+            color: #58a6ff;
+            font-size: 2rem;
         }
         .container {
             max-width: 1000px;
             margin: auto;
             padding: 20px;
         }
-        .products-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .product {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            width: 280px;
+        .team-member {
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
         }
-        .product img {
-            width: 100%;
-            height: 250px;
+        .image-group {
+            display: flex;
+            gap: 20px; /* Abstand zwischen den Bildern */
+        }
+        .image-group img {
+            width: 300px;
+            height: 300px;
             object-fit: cover;
             border-radius: 10px;
+        }
+        .team-member h3 {
+            margin: 10px 0 5px 0;
+        }
+        .team-member p {
+            margin: 5px 0;
         }
         button {
             background-color: #58a6ff;
             color: white;
+            font-size: 16px;
             border: none;
             padding: 10px 20px;
-            border-radius: 5px;
-            margin-top: 10px;
             cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #4687c1;
         }
     </style>
 </head>
 <body>
+    <img src="./assets/images/Software banner.jpg" alt="Merch Banner" style="width: 100%; max-height: 300px; object-fit: cover;">
+
+    <!-- Hardware -->
     <div class="container">
-        <h1>🛒 Oreoyum Software</h1>
-        <div class="products-container" id="products"></div>
+        <h2>Computer Softwares</h2>
+<div id="product-container"></div>
+
+        <div class="team-member">
+            <div class="image-group">
+                <img src="./assets/images/How-to-Fix-Various-Error-Codes-Occurring-in-Windows-10.ico" alt="Error">
+            </div>
+            <h3>Anti Bluescreen Software</h3>
+            <p>62.99 CHF</p>
+            <p><strong>Download grösse:</strong> 27GB</p>
+            <p><strong>Systemanforderungen:</strong> Windows 8+</p>
+            <p><strong>Architektur-Merkmale:</strong> Diese App ist eine AI die dafür sorgt alle Probleme die zu einem Bluescreen führen könnten zu beheben. Die AI verbietet dir das Löschen wichtiger Dateien und ist auch automatisch eine Anti-Viren Software die für den Schutz deines PC's sorgt.</p>
+        </div>
     </div>
 
-    <script>
-        fetch("products.json")
-            .then(res => res.json())
-            .then(data => {
-                const container = document.getElementById("products");
-                const filtered = data.filter(p => p.type === "software");
-                filtered.forEach(p => {
-                    const div = document.createElement("div");
-                    div.className = "product";
-                    div.innerHTML = `
-                        <img src="${p.image}" alt="${p.name}">
-                        <h3>${p.name}</h3>
-                        <p>${p.price.toFixed(2)} CHF</p>
-                        <p>${p.description}</p>
-                        <button>In den Warenkorb</button>
-                    `;
-                    container.appendChild(div);
-                });
-            })
-            .catch(err => {
-                document.getElementById("products").innerText = "Fehler beim Laden der Produkte.";
-                console.error(err);
-            });
-    </script>
+    <!-- Zurück zur Startseite -->
+    <div class="container">
+        <a href="index.html"><button>Zurück zur Startseite</button></a>
+    </div>
 </body>
 </html>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("product-container");
+    const category = "software";
+
+    fetch("/static/products.json")
+        .then(response => response.json())
+        .then(products => {
+            container.innerHTML = "";
+            products.filter(p => p.typ === category).forEach(product => {
+                const item = document.createElement("div");
+                item.className = "team-member";
+
+                const img = document.createElement("img");
+                img.src = "/static/" + product.bild;
+                img.alt = product.name;
+                item.appendChild(img);
+
+                const title = document.createElement("h3");
+                title.textContent = product.name;
+                item.appendChild(title);
+
+                const price = document.createElement("p");
+                price.textContent = product.preis + " CHF";
+                item.appendChild(price);
+
+                const beschreibung = document.createElement("p");
+                beschreibung.textContent = product.beschreibung;
+                item.appendChild(beschreibung);
+
+                const button = document.createElement("button");
+                button.textContent = "In den Warenkorb";
+                button.onclick = () => {
+                    const cart = JSON.parse(localStorage.getItem("warenkorb") || "[]");
+                    cart.push(product);
+                    localStorage.setItem("warenkorb", JSON.stringify(cart));
+                    alert("Produkt hinzugefügt!");
+                };
+                item.appendChild(button);
+
+                container.appendChild(item);
+            });
+        });
+});
+</script>
