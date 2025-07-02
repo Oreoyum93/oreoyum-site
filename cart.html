@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warenkorb</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #c9d1d9;
+            font-family: Arial, sans-serif;
+            padding: 40px; max-width: 1000px; margin: auto;
+        }
+        h1 {
+            color: #4ea1f3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #555;
+        }
+        th {
+            text-align: left;
+        }
+        button {
+            background-color: #4ea1f3;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<a href="index_shop.html"><button style="margin-bottom: 20px;">⬅ Zurück zum Shop</button></a>
+    <h1>🛒 Dein Warenkorb</h1>
+    <table id="cart-table"></table>
+    <h2 id="total"></h2>
+    <script>
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function renderCart() {
+            const table = document.getElementById("cart-table");
+            let html = `<tr><th>Produkt</th><th>Preis</th><th>Menge</th><th>Gesamt</th><th></th></tr>`;
+            let total = 0;
+            cart.forEach((item, index) => {
+                const sum = item.price * item.qty;
+                total += sum;
+                html += `<tr>
+                    <td>${item.name}</td>
+                    <td>${item.price.toFixed(2)} CHF</td>
+                    <td>${item.qty}</td>
+                    <td>${sum.toFixed(2)} CHF</td>
+                    <td><button onclick="removeItem(${index})">Entfernen</button></td>
+                </tr>`;
+            });
+            table.innerHTML = html;
+            document.getElementById("total").innerText = `Gesamt: ${total.toFixed(2)} CHF`;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+
+        renderCart();
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oreoyum - IT & Religion</title>
+    <style>
+        body {
+            background-color: #121212; /* Dunkler Hintergrund */
+            color: #c9d1d9; /* Helle Schriftfarbe */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #58a6ff; /* Helle Blautöne für Überschriften */
+            font-size: 3rem; /* Größere Schriftgröße für h1 */
+        }
+        h2 {
+            color: #58a6ff; /* Helle Blautöne für Überschriften */
+            font-size: 2rem; /* Größere Schriftgröße für h2 */
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .service, .team-member, .sponsor {
+            background: rgba(255, 255, 255, 0.1); /* Transp. Hintergrund */
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .service {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            flex-wrap: wrap; /* Damit der Inhalt bei Bedarf umbricht */
+        }
+        .service img {
+            width: 150px; /* Größere Bildgröße */
+            height: 150px; /* Höhere Höhe für größere Bilder */
+            margin-right: 20px; /* Abstand zwischen Bild und Text */
+            border-radius: 10px;
+        }
+        .team-member {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        button {
+            background-color: #58a6ff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #4687c1;
+        }
+        
+        /* Sponsor Bild anpassen */
+        .sponsor img {
+            max-width: 100%; /* Damit das Bild nicht größer wird als der Container */
+            height: auto; /* Beibehaltung der ursprünglichen Proportionen */
+            max-height: 200px; /* Begrenzung der Höhe des Banners */
+        }
+
+        /* Buttons nebeneinander */
+        .button-container {
+            display: flex; /* Damit die Buttons nebeneinander stehen */
+            justify-content: center; /* Zentriert die Buttons */
+            gap: 10px; /* Abstand zwischen den Buttons */
+        }
+
+        .button-container a {
+            text-decoration: none; /* Entfernt die Unterstreichung der Links */
+        }
+
+        .button-container button {
+            width: 150px; /* Optional, wenn du alle Buttons gleich groß haben willst */
+        }
+    </style>
+</head>
+<body>
+    <h1>Willkommen bei Oreoyum</h1>
+    <div>
+        <img src="./assets/images/oreoyum_von_temu-removebg-preview.png" alt="Willkommen bei Oreoyum">
+    </div>
+    <p>Die IT-Lösung mit spirituellem Touch 🚀✨</p>
+
+    <!-- Leistungen Abschnitt -->
+    <div class="container">
+        <h2>Unsere Leistungen</h2>
+        
+        <!-- Softwareentwicklung -->
+        <div class="service">
+            <img src="https://th.bing.com/th/id/OIP.1VGbIetElQMXely9uXdROwHaE7?rs=1&pid=ImgDetMain" alt="Softwareentwicklung">
+            <div>
+                <h3>💻 Softwareentwicklung</h3>
+                <p>Oreoyum – Deine digitale Zukunft, heute! 
+                    Mit Oreoyum wirst du zum digitalen Trendsetter! Wir entwickeln maßgeschneiderte Softwarelösungen, die deine Ideen in die Realität katapultieren. Egal ob App, Plattform oder Webanwendung – wir liefern smarte, schnelle und effiziente Lösungen.
+                    </p>
+                <p>Ready für die nächste Stufe? Let’s code it! 💻✨</p>
+            </div>
+        </div>
+        
+        <!-- IT-Support -->
+        <div class="service">
+            <img src="https://www.itcompanydubai.com/wp-content/uploads/2023/02/remote-support-disputes.jpg" alt="IT-Support">
+            <div>
+                <h3>🛠 IT-Support</h3>
+                <p>Oreoyum – Dein IT-Support, immer am Puls der Zeit! 
+                    Probleme mit deiner Technik? Kein Stress! Oreoyum sorgt dafür, dass deine IT rund läuft – schnell, zuverlässig und immer auf dem neuesten Stand. Von der Fehlerbehebung bis zur Systemoptimierung – wir kümmern uns um alles, damit du dich auf das Wesentliche konzentrieren kannst.
+                    </p>
+                <p>Deine Technik. Unser Support. 👨‍💻🔧</p>
+            </div>
+        </div>
+        
+        <!-- Cloud-Lösungen -->
+        <div class="service">
+            <img src="https://www.it-daily.net/wp-content/uploads/2022/05/Cloud-Computing-Shutterstock-1919374457-1920.jpg" alt="Cloud-Lösungen">
+            <div>
+                <h3>☁ Cloud-Lösungen</h3>
+                <p>Oreoyum – Deine Zukunft in der Cloud! 
+                    Mit Oreoyum hebst du deine IT in die Cloud! Skalierbar, sicher und immer verfügbar – unsere Cloud-Lösungen passen sich deinen Bedürfnissen an. Spar dir den Platz auf dem Server und setz auf die Flexibilität der Cloud, wo du alles jederzeit und überall nutzen kannst.
+                    </p>
+                <p>Sicher. Flexibel. Oreoyum Cloud. 🌐🚀</p>
+            </div>
+        </div>
+        
+        <!-- Religiöse Beratung -->
+        <div class="service">
+            <img src="./assets/images/religion.png" alt="Religiöse Beratung">
+            <div>
+                <h3>🍪 Religiöse Beratung</h3>
+                <p>Treten Sie noch heute der Oreoyum Religion bei. Wir haben unseren Prophäten Marc Liesch und insgesamt 10 Mitglieder! </p>
+                <p>Falls Sie das Anspricht schreiben Sie doch eine Mail an: Laciv@oreoyum.local</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sponsor">
+        <h2>Unser Sponsor</h2>
+        <p>Vielen Dank an unseren Sponsor für die Unterstützung!</p>
+        <div>
+            <h3>Sponsor Name: Liesch Artificial's</h3>
+            <img src="./assets/images/Banner.png" alt="Sponsor Banner">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="button-container">
+            <a href="team.html"><button>Zum Team</button></a>
+            <a href="software_shop.html"><button>Zur Software</button></a>
+            <a href="hardware_shop.html"><button>Zur Hardware</button></a>
+            <a href="merch_shop.html"><button>Zum Merch</button></a>
+        </div>
+    </div>
+</body>
+</html>
