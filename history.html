@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Bestellhistorie</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        .order {
+            background-color: #1e1e1e;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+        }
+        table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+            color: #fff;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2a2a2a;
+        }
+        .timestamp {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #58a6ff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        a button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body onload="loadHistory()">
+    <h1>🗃️ Deine Bestellhistorie</h1>
+    <div id="history"></div>
+    <a href="index.html"><button>Zurück zur Startseite</button></a>
+
+    <script>
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+            const container = document.getElementById("history");
+
+            if (history.length === 0) {
+                container.innerHTML = "<p>Keine Bestellungen gefunden.</p>";
+                return;
+            }
+
+            container.innerHTML = "";
+
+            history.forEach(order => {
+                let html = '<div class="order">';
+                html += `<div class="timestamp">🕒 ${new Date(order.timestamp).toLocaleString()}</div>`;
+                html += '<table><tr><th>Produkt</th><th>Menge</th><th>Preis</th><th>Gesamt</th></tr>';
+
+                let total = 0;
+                order.items.forEach(item => {
+                    const line = item.price * item.quantity;
+                    total += line;
+                    html += `<tr>
+                        <td>${item.name}</td>
+                        <td>${item.quantity}</td>
+                        <td>${item.price.toFixed(2)} CHF</td>
+                        <td>${line.toFixed(2)} CHF</td>
+                    </tr>`;
+                });
+
+                html += `<tr><td colspan="3"><strong>Gesamtsumme</strong></td><td><strong>${total.toFixed(2)} CHF</strong></td></tr>`;
+                html += '</table></div>';
+                container.innerHTML += html;
+            });
+        }
+    </script>
+</body>
+</html>

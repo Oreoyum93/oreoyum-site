@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Oreoyum Bezahlung</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #58a6ff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #4687c1;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            color: #fff;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2a2a2a;
+        }
+        .note {
+            margin-top: 40px;
+            font-style: italic;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+<body onload="renderSummary()">
+    <div class="container">
+        <h1>💳 Bezahlung abgeschlossen</h1>
+        <div id="summary"></div>
+        <p class="note">Für die endgültige Bezahlung wende dich bitte an eine verantwortliche Person.</p>
+        <button onclick="downloadPDF()">📄 Bestätigung als PDF herunterladen</button>
+        <br><br>
+        <a href="index.html"><button>Zurück zur Startseite</button></a>
+    </div>
+
+    <script>
+        function renderSummary() {
+            const summary = JSON.parse(localStorage.getItem("lastOrder")) || [];
+            const container = document.getElementById("summary");
+
+            if (summary.length === 0) {
+                container.innerHTML = "<p>Keine Bestelldaten verfügbar.</p>";
+                return;
+            }
+
+            let html = '<h2>🧾 Deine Bestellung</h2>';
+            html += '<table><tr><th>Produkt</th><th>Menge</th><th>Preis</th><th>Gesamt</th></tr>';
+            let total = 0;
+
+            summary.forEach(item => {
+                const lineTotal = item.price * item.quantity;
+                total += lineTotal;
+                html += `<tr>
+                    <td>${item.name}</td>
+                    <td>${item.quantity}</td>
+                    <td>${item.price.toFixed(2)} CHF</td>
+                    <td>${lineTotal.toFixed(2)} CHF</td>
+                </tr>`;
+            });
+
+            html += `<tr><td colspan="3"><strong>Gesamtsumme</strong></td><td><strong>${total.toFixed(2)} CHF</strong></td></tr>`;
+            html += '</table>';
+            container.innerHTML = html;
+        }
+
+        function downloadPDF() {
+            const summary = JSON.parse(localStorage.getItem("lastOrder")) || [];
+            let total = 0;
+
+            const win = window.open('', '', 'width=800,height=600');
+            win.document.write(`
+                <html>
+                <head>
+                    <title>Oreoyum PDF</title>
+                    <style>
+                        body { font-family: Arial; padding: 30px; }
+                        h1 { color: #333; }
+                        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                        th, td { border: 1px solid #999; padding: 8px; text-align: left; }
+                        th { background: #eee; }
+                        .footer { margin-top: 30px; font-style: italic; color: #555; }
+                    </style>
+                </head>
+                <body>
+                    <h1>Oreoyum – Bestellbestätigung</h1>
+                    <table>
+                        <tr><th>Produkt</th><th>Menge</th><th>Preis</th><th>Gesamt</th></tr>
+                        ${summary.map(item => {
+                            const lineTotal = item.price * item.quantity;
+                            total += lineTotal;
+                            return `<tr>
+                                <td>${item.name}</td>
+                                <td>${item.quantity}</td>
+                                <td>${item.price.toFixed(2)} CHF</td>
+                                <td>${lineTotal.toFixed(2)} CHF</td>
+                            </tr>`;
+                        }).join('')}
+                        <tr><td colspan="3"><strong>Gesamtsumme</strong></td><td><strong>${total.toFixed(2)} CHF</strong></td></tr>
+                    </table>
+                    <p class="footer">Für die endgültige Bezahlung wende dich bitte an eine verantwortliche Person.</p>
+                </body>
+                </html>
+            `);
+            win.document.close();
+            win.print();
+        }
+    </script>
+</body>
+</html>
