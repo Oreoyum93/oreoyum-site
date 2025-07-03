@@ -612,24 +612,5 @@
 </div>
 <script src="cart.js">
 </script>
-
-<script>
-async function updateStockDisplay() {
-    const response = await fetch("http://localhost:3000/stock");
-    const stockData = await response.json();
-
-    stockData.forEach(item => {
-        const elements = document.querySelectorAll(`[data-name='${item.name}']`);
-        elements.forEach(el => {
-            const p = document.createElement('p');
-            p.style.color = '#ccc';
-            p.innerText = `🧾 Auf Lager: ${item.stock}`;
-            el.parentElement.insertBefore(p, el);
-        });
-    });
-}
-updateStockDisplay();
-</script>
-
 </body>
 </html>
