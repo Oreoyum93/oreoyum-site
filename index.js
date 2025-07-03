@@ -58,6 +58,6 @@ app.post('/checkout', (req, res) => {
         .catch(err => res.status(500).json({ error: 'Fehler beim Aktualisieren des Lagerbestands' }));
 });
 
-app.listen(PORT, () => {
+app.listen(3000, "0.0.0.0" () => {
     console.log(`Server läuft auf http://localhost:${PORT}`);
 });
