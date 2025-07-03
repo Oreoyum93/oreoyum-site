@@ -4,9 +4,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Oreoyum - Unser Merch</title>
+<title>
+   Oreoyum - Unser Merch
+  </title>
 <style>
-        body {
+   body {
             background-color: #121212;
             color: #c9d1d9;
             font-family: Arial, sans-serif;
@@ -68,72 +70,547 @@
             transform: scale(1.05);
             transition: transform 0.3s ease;
         }
-        
-@media (max-width: 768px) {
-    .team-member, .container, .news-block {
-        width: 90% !important;
-        margin: 0 auto 20px auto !important;
-    }
 
-    .products-container {
-        flex-direction: column !important;
-        align-items: center !important;
-    }
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
-    button, .button, a.button {
-        width: 90% !important;
-        font-size: 16px !important;
-        padding: 12px !important;
-        text-align: center !important;
-        display: inline-block;
-        margin-bottom: 15px;
-    }
+.team-member {
+    flex: 0 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+}
 
-    .image-group img {
-        width: 100% !important;
-        height: auto !important;
-    }
-
-    .team-member img {
-        width: 100px !important;
-        height: 100px !important;
-    }
-
-    h1, h2 {
-        font-size: 1.4em !important;
-        text-align: center !important;
+@media (max-width: 1024px) {
+    .team-member {
+        flex: 0 1 calc(50% - 20px);
     }
 }
-</style>
+
+@media (max-width: 600px) {
+    .team-member {
+        flex: 0 1 100%;
+    }
+}
+  </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 </head>
-<body><a href="cart.html" style="position: fixed; top: 20px; right: 20px; z-index: 999; background-color: #222; color: white; padding: 10px 15px; border-radius: 8px; text-decoration: none;">🛒 Warenkorb</a>
+<body>
+<a href="cart.html" style="position: fixed; top: 20px; right: 20px; z-index: 999; background-color: #222; color: white; padding: 10px 15px; border-radius: 8px; text-decoration: none;">
+   🛒 Warenkorb
+  </a>
 <img alt="Merch Banner" src="./assets/images/oreoshop.jpg" style="width: 100%; max-height: 300px; object-fit: cover;"/>
 <div class="container">
-<h2>Hoodies</h2>
+<h2>
+    Oberteile
+   </h2>
 <div class="products-container">
 <div class="team-member">
 <img alt="Yum T-Shirt 1st Edition (White)" src="./assets/images/yum_tshirt-removebg-preview.png"/>
-<h3>Yum T-Shirt 1st Edition (White)</h3>
-<p>24.99 CHF</p>
-<p>Die erste Version des Yum T-Shirts ist perfekt wenn du im Sommer am Strand gemobbt werden willst! Ich meine wer trägt sowas?</p>
-<div style="margin-top: 15px; display: flex; justify-content: center;"><button onclick="addToCart({ name: 'Yum T-Shirt 1st Edition (White)', price: 24.99, image: './assets/images/yum_tshirt-removebg-preview.png' })" style="background-color: #3399ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">In den Warenkorb</button></div></div>
+<h3>
+      Yum T-Shirt 1st Edition (White)
+     </h3>
+<p>
+      24.99 CHF
+     </p>
+<p>Yum T-Shirt 1st Edition (White): Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<div style="margin-top: 15px; display: flex; justify-content: center;">
+<button class="add-to-cart" data-name="Yum T-Shirt 1st Edition (White)" data-price="24.99 CHF" onclick="addToCart({name: 'Yum T-Shirt 1st Edition (White)', price: 24.99, image: './assets/images/yum_tshirt-removebg-preview.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+</div>
 <div class="team-member">
 <img alt="Yum Hoddie 1st Edition (Black)" src="./assets/images/yum_hoddie-removebg-preview.png"/>
-<h3>Yum Hoddie 1st Edition (Black)</h3>
-<p>39.99 CHF</p>
-<p>Ein stylischer Hoddie mit höchster Qualität. Gut um dich im Winter warm zu halten und deine Hacking-Skills zu verbessern!</p>
-<div style="margin-top: 15px; display: flex; justify-content: center;"><button onclick="addToCart({ name: 'Yum Hoddie 1st Edition (Black)', price: 39.99, image: './assets/images/yum_hoddie-removebg-preview.png' })" style="background-color: #3399ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">In den Warenkorb</button></div></div>
+<h3>
+      Yum Hoddie 1st Edition (Black)
+     </h3>
+<p>
+      39.99 CHF
+     </p>
+<p>Yum Hoddie 1st Edition (Black): Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<div style="margin-top: 15px; display: flex; justify-content: center;">
+<button class="add-to-cart" data-name="Yum Hoddie 1st Edition (Black)" data-price="39.99 CHF" onclick="addToCart({name: 'Yum Hoddie 1st Edition (Black)', price: 39.99, image: './assets/images/yum_hoddie-removebg-preview.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+</div>
 <div class="team-member">
 <img alt="Yum T-Shirt 2nd Edition (Black)" src="./assets/images/yumv2-removebg-preview.png"/>
-<h3>Yum T-Shirt 2nd Edition (Blue)</h3>
+<h3>
+      Yum T-Shirt 2nd Edition (Blue)
+     </h3>
+<p>
+      29.99 CHF
+     </p>
+<p>Yum T-Shirt 2nd Edition (Blue): Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<div style="margin-top: 15px; display: flex; justify-content: center;">
+<button class="add-to-cart" data-name="Yum T-Shirt 2nd Edition (Blue)" data-price="29.99 CHF" onclick="addToCart({name: 'Yum T-Shirt 2nd Edition (Blue)', price: 29.99, image: './assets/images/yumv2-removebg-preview.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+</div>
+<div class="team-member">
+<img alt="404yum T Shirt" src="./assets/new merch without background/Oberteile/404yum T-Shirt.png"/>
+<h3>404yum T Shirt</h3>
+<p>24.99 CHF</p>
+<p>404yum T Shirt: Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="404yum T Shirt" data-price="24.99 CHF" onclick="addToCart({name: '404yum T Shirt', price: 24.99, image: './assets/new merch without background/Oberteile/404yum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Anit Therapieyum Crop Hoddie" src="./assets/new merch without background/Oberteile/Anit Therapieyum Crop Hoddie.png"/>
+<h3>Anit Therapieyum Crop Hoddie</h3>
+<p>24.99 CHF</p>
+<p>Anit Therapieyum Crop Hoddie: Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Anit Therapieyum Crop Hoddie" data-price="24.99 CHF" onclick="addToCart({name: 'Anit Therapieyum Crop Hoddie', price: 24.99, image: './assets/new merch without background/Oberteile/Anit Therapieyum Crop Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Blumenyum Hoddie" src="./assets/new merch without background/Oberteile/Blumenyum Hoddie.png"/>
+<h3>Blumenyum Hoddie</h3>
+<p>34.99 CHF</p>
+<p>Blumenyum Hoddie: Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="Blumenyum Hoddie" data-price="34.99 CHF" onclick="addToCart({name: 'Blumenyum Hoddie', price: 34.99, image: './assets/new merch without background/Oberteile/Blumenyum Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Blumenyum T Shirt" src="./assets/new merch without background/Oberteile/Blumenyum T-Shirt.png"/>
+<h3>Blumenyum T Shirt</h3>
 <p>29.99 CHF</p>
-<p>Eine bessere Version des Yum T-Shirts ist da! Zeige jedem deine Liebe für Yum mit dem Black Edition T-Shirt!</p>
-<div style="margin-top: 15px; display: flex; justify-content: center;"><button onclick="addToCart({ name: 'Yum T-Shirt 2nd Edition (Blue)', price: 29.99, image: './assets/images/yumv2-removebg-preview.png' })" style="background-color: #3399ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">In den Warenkorb</button></div></div>
+<p>Blumenyum T Shirt: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Blumenyum T Shirt" data-price="29.99 CHF" onclick="addToCart({name: 'Blumenyum T Shirt', price: 29.99, image: './assets/new merch without background/Oberteile/Blumenyum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Camerayum (front Design)" src="./assets/new merch without background/Oberteile/Camerayum (Front Design).png"/>
+<h3>Camerayum (front Design)</h3>
+<p>24.99 CHF</p>
+<p>Camerayum (front Design): Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Camerayum (front Design)" data-price="24.99 CHF" onclick="addToCart({name: 'Camerayum (front Design)', price: 24.99, image: './assets/new merch without background/Oberteile/Camerayum (Front Design).png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Camerayum (rücken Design)" src="./assets/new merch without background/Oberteile/Camerayum (Rücken Design).png"/>
+<h3>Camerayum (rücken Design)</h3>
+<p>29.99 CHF</p>
+<p>Camerayum (rücken Design): Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Camerayum (rücken Design)" data-price="29.99 CHF" onclick="addToCart({name: 'Camerayum (rücken Design)', price: 29.99, image: './assets/new merch without background/Oberteile/Camerayum (Rücken Design).png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Cookies T Shirt" src="./assets/new merch without background/Oberteile/Cookies T-Shirt.png"/>
+<h3>Cookies T Shirt</h3>
+<p>29.99 CHF</p>
+<p>Cookies T Shirt: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Cookies T Shirt" data-price="29.99 CHF" onclick="addToCart({name: 'Cookies T Shirt', price: 29.99, image: './assets/new merch without background/Oberteile/Cookies T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Der Beobachter Yum Hoddie" src="./assets/new merch without background/Oberteile/Der Beobachter Yum Hoddie.png"/>
+<h3>Der Beobachter Yum Hoddie</h3>
+<p>29.99 CHF</p>
+<p>Der Beobachter Yum Hoddie: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Der Beobachter Yum Hoddie" data-price="29.99 CHF" onclick="addToCart({name: 'Der Beobachter Yum Hoddie', price: 29.99, image: './assets/new merch without background/Oberteile/Der Beobachter Yum Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Der Weg Hoddie" src="./assets/new merch without background/Oberteile/Der Weg Hoddie.png"/>
+<h3>Der Weg Hoddie</h3>
+<p>34.99 CHF</p>
+<p>Der Weg Hoddie: Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="Der Weg Hoddie" data-price="34.99 CHF" onclick="addToCart({name: 'Der Weg Hoddie', price: 34.99, image: './assets/new merch without background/Oberteile/Der Weg Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Faktenyum T Shirt" src="./assets/new merch without background/Oberteile/Faktenyum T-Shirt.png"/>
+<h3>Faktenyum T Shirt</h3>
+<p>24.99 CHF</p>
+<p>Faktenyum T Shirt: Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Faktenyum T Shirt" data-price="24.99 CHF" onclick="addToCart({name: 'Faktenyum T Shirt', price: 24.99, image: './assets/new merch without background/Oberteile/Faktenyum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Feueryum Shirt" src="./assets/new merch without background/Oberteile/Feueryum Shirt.png"/>
+<h3>Feueryum Shirt</h3>
+<p>29.99 CHF</p>
+<p>Feueryum Shirt: Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Feueryum Shirt" data-price="29.99 CHF" onclick="addToCart({name: 'Feueryum Shirt', price: 29.99, image: './assets/new merch without background/Oberteile/Feueryum Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Fingeryum T Shirt" src="./assets/new merch without background/Oberteile/Fingeryum T-Shirt.png"/>
+<h3>Fingeryum T Shirt</h3>
+<p>34.99 CHF</p>
+<p>Fingeryum T Shirt: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Fingeryum T Shirt" data-price="34.99 CHF" onclick="addToCart({name: 'Fingeryum T Shirt', price: 34.99, image: './assets/new merch without background/Oberteile/Fingeryum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Friedenyum Hoddie" src="./assets/new merch without background/Oberteile/Friedenyum Hoddie.png"/>
+<h3>Friedenyum Hoddie</h3>
+<p>29.99 CHF</p>
+<p>Friedenyum Hoddie: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Friedenyum Hoddie" data-price="29.99 CHF" onclick="addToCart({name: 'Friedenyum Hoddie', price: 29.99, image: './assets/new merch without background/Oberteile/Friedenyum Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="I Love Dad Hoddie" src="./assets/new merch without background/Oberteile/I Love Dad Hoddie.png"/>
+<h3>I Love Dad Hoddie</h3>
+<p>29.99 CHF</p>
+<p>I Love Dad Hoddie: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="I Love Dad Hoddie" data-price="29.99 CHF" onclick="addToCart({name: 'I Love Dad Hoddie', price: 29.99, image: './assets/new merch without background/Oberteile/I Love Dad Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="I Love Daddy Hoddie" src="./assets/new merch without background/Oberteile/I Love daddy hoddie.png"/>
+<h3>I Love Daddy Hoddie</h3>
+<p>34.99 CHF</p>
+<p>I Love Daddy Hoddie: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="I Love Daddy Hoddie" data-price="34.99 CHF" onclick="addToCart({name: 'I Love Daddy Hoddie', price: 34.99, image: './assets/new merch without background/Oberteile/I Love daddy hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Informatikeryum T Shirt 2nd Edition" src="./assets/new merch without background/Oberteile/Informatikeryum T-Shirt 2nd Edition.png"/>
+<h3>Informatikeryum T Shirt 2nd Edition</h3>
+<p>29.99 CHF</p>
+<p>Informatikeryum T Shirt 2nd Edition: Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="Informatikeryum T Shirt 2nd Edition" data-price="29.99 CHF" onclick="addToCart({name: 'Informatikeryum T Shirt 2nd Edition', price: 29.99, image: './assets/new merch without background/Oberteile/Informatikeryum T-Shirt 2nd Edition.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Lolyum T Shirt" src="./assets/new merch without background/Oberteile/LOLyum T-Shirt.png"/>
+<h3>Lolyum T Shirt</h3>
+<p>34.99 CHF</p>
+<p>Lolyum T Shirt: Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Lolyum T Shirt" data-price="34.99 CHF" onclick="addToCart({name: 'Lolyum T Shirt', price: 34.99, image: './assets/new merch without background/Oberteile/LOLyum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Memeyum Polo Shirt" src="./assets/new merch without background/Oberteile/Memeyum Polo Shirt.png"/>
+<h3>Memeyum Polo Shirt</h3>
+<p>34.99 CHF</p>
+<p>Memeyum Polo Shirt: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Memeyum Polo Shirt" data-price="34.99 CHF" onclick="addToCart({name: 'Memeyum Polo Shirt', price: 34.99, image: './assets/new merch without background/Oberteile/Memeyum Polo Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Nachricht An Chef T Shirt" src="./assets/new merch without background/Oberteile/Nachricht An Chef T-Shirt.png"/>
+<h3>Nachricht An Chef T Shirt</h3>
+<p>24.99 CHF</p>
+<p>Nachricht An Chef T Shirt: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Nachricht An Chef T Shirt" data-price="24.99 CHF" onclick="addToCart({name: 'Nachricht An Chef T Shirt', price: 24.99, image: './assets/new merch without background/Oberteile/Nachricht An Chef T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreo President Hoddie" src="./assets/new merch without background/Oberteile/Oreo President Hoddie.png"/>
+<h3>Oreo President Hoddie</h3>
+<p>24.99 CHF</p>
+<p>Oreo President Hoddie: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Oreo President Hoddie" data-price="24.99 CHF" onclick="addToCart({name: 'Oreo President Hoddie', price: 24.99, image: './assets/new merch without background/Oberteile/Oreo President Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Crop Hoddie" src="./assets/new merch without background/Oberteile/Oreoyum Crop Hoddie.png"/>
+<h3>Oreoyum Crop Hoddie</h3>
+<p>34.99 CHF</p>
+<p>Oreoyum Crop Hoddie: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Oreoyum Crop Hoddie" data-price="34.99 CHF" onclick="addToCart({name: 'Oreoyum Crop Hoddie', price: 34.99, image: './assets/new merch without background/Oberteile/Oreoyum Crop Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Hoddie" src="./assets/new merch without background/Oberteile/Oreoyum Hoddie.png"/>
+<h3>Oreoyum Hoddie</h3>
+<p>34.99 CHF</p>
+<p>Oreoyum Hoddie: Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="Oreoyum Hoddie" data-price="34.99 CHF" onclick="addToCart({name: 'Oreoyum Hoddie', price: 34.99, image: './assets/new merch without background/Oberteile/Oreoyum Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum T Shirt" src="./assets/new merch without background/Oberteile/Oreoyum T-Shirt.png"/>
+<h3>Oreoyum T Shirt</h3>
+<p>34.99 CHF</p>
+<p>Oreoyum T Shirt: Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="Oreoyum T Shirt" data-price="34.99 CHF" onclick="addToCart({name: 'Oreoyum T Shirt', price: 34.99, image: './assets/new merch without background/Oberteile/Oreoyum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Weste" src="./assets/new merch without background/Oberteile/Oreoyum Weste.png"/>
+<h3>Oreoyum Weste</h3>
+<p>24.99 CHF</p>
+<p>Oreoyum Weste: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Oreoyum Weste" data-price="24.99 CHF" onclick="addToCart({name: 'Oreoyum Weste', price: 24.99, image: './assets/new merch without background/Oberteile/Oreoyum Weste.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Spiegelyum T Shirt" src="./assets/new merch without background/Oberteile/Spiegelyum T-Shirt.png"/>
+<h3>Spiegelyum T Shirt</h3>
+<p>29.99 CHF</p>
+<p>Spiegelyum T Shirt: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Spiegelyum T Shirt" data-price="29.99 CHF" onclick="addToCart({name: 'Spiegelyum T Shirt', price: 29.99, image: './assets/new merch without background/Oberteile/Spiegelyum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Symbolisches Yum T Shirt" src="./assets/new merch without background/Oberteile/Symbolisches Yum T-Shirt.png"/>
+<h3>Symbolisches Yum T Shirt</h3>
+<p>29.99 CHF</p>
+<p>Symbolisches Yum T Shirt: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Symbolisches Yum T Shirt" data-price="29.99 CHF" onclick="addToCart({name: 'Symbolisches Yum T Shirt', price: 29.99, image: './assets/new merch without background/Oberteile/Symbolisches Yum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Team Oreoyum Crop Hoddie" src="./assets/new merch without background/Oberteile/Team Oreoyum Crop Hoddie.png"/>
+<h3>Team Oreoyum Crop Hoddie</h3>
+<p>29.99 CHF</p>
+<p>Team Oreoyum Crop Hoddie: Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Team Oreoyum Crop Hoddie" data-price="29.99 CHF" onclick="addToCart({name: 'Team Oreoyum Crop Hoddie', price: 29.99, image: './assets/new merch without background/Oberteile/Team Oreoyum Crop Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Team Oreoyum Hoddie" src="./assets/new merch without background/Oberteile/Team Oreoyum Hoddie.png"/>
+<h3>Team Oreoyum Hoddie</h3>
+<p>34.99 CHF</p>
+<p>Team Oreoyum Hoddie: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Team Oreoyum Hoddie" data-price="34.99 CHF" onclick="addToCart({name: 'Team Oreoyum Hoddie', price: 34.99, image: './assets/new merch without background/Oberteile/Team Oreoyum Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Teufelyum T Shirt" src="./assets/new merch without background/Oberteile/Teufelyum T-Shirt.png"/>
+<h3>Teufelyum T Shirt</h3>
+<p>29.99 CHF</p>
+<p>Teufelyum T Shirt: Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="Teufelyum T Shirt" data-price="29.99 CHF" onclick="addToCart({name: 'Teufelyum T Shirt', price: 29.99, image: './assets/new merch without background/Oberteile/Teufelyum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Therapieyum Crop Hoddie" src="./assets/new merch without background/Oberteile/Therapieyum Crop Hoddie.png"/>
+<h3>Therapieyum Crop Hoddie</h3>
+<p>24.99 CHF</p>
+<p>Therapieyum Crop Hoddie: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Therapieyum Crop Hoddie" data-price="24.99 CHF" onclick="addToCart({name: 'Therapieyum Crop Hoddie', price: 24.99, image: './assets/new merch without background/Oberteile/Therapieyum Crop Hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Warheitsyum T Shirt" src="./assets/new merch without background/Oberteile/Warheitsyum T-Shirt.png"/>
+<h3>Warheitsyum T Shirt</h3>
+<p>24.99 CHF</p>
+<p>Warheitsyum T Shirt: Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="Warheitsyum T Shirt" data-price="24.99 CHF" onclick="addToCart({name: 'Warheitsyum T Shirt', price: 24.99, image: './assets/new merch without background/Oberteile/Warheitsyum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Yum X Kadze T Shirt" src="./assets/new merch without background/Oberteile/Yum x Kadze T-shirt.png"/>
+<h3>Yum X Kadze T Shirt</h3>
+<p>29.99 CHF</p>
+<p>Yum X Kadze T Shirt: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Yum X Kadze T Shirt" data-price="29.99 CHF" onclick="addToCart({name: 'Yum X Kadze T Shirt', price: 29.99, image: './assets/new merch without background/Oberteile/Yum x Kadze T-shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Yumland T Shirt" src="./assets/new merch without background/Oberteile/Yumland T-Shirt.png"/>
+<h3>Yumland T Shirt</h3>
+<p>29.99 CHF</p>
+<p>Yumland T Shirt: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Yumland T Shirt" data-price="29.99 CHF" onclick="addToCart({name: 'Yumland T Shirt', price: 29.99, image: './assets/new merch without background/Oberteile/Yumland T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Grogu X Oreoyum Hoddie" src="./assets/new merch without background/Oberteile/grogu x oreoyum hoddie.png"/>
+<h3>Grogu X Oreoyum Hoddie</h3>
+<p>24.99 CHF</p>
+<p>Grogu X Oreoyum Hoddie: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Grogu X Oreoyum Hoddie" data-price="24.99 CHF" onclick="addToCart({name: 'Grogu X Oreoyum Hoddie', price: 24.99, image: './assets/new merch without background/Oberteile/grogu x oreoyum hoddie.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Informatikeryum T Shirt" src="./assets/new merch without background/Oberteile/informatikeryum T-Shirt.png"/>
+<h3>Informatikeryum T Shirt</h3>
+<p>34.99 CHF</p>
+<p>Informatikeryum T Shirt: Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Informatikeryum T Shirt" data-price="34.99 CHF" onclick="addToCart({name: 'Informatikeryum T Shirt', price: 34.99, image: './assets/new merch without background/Oberteile/informatikeryum T-Shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Schadenyum Shirt" src="./assets/new merch without background/Oberteile/schadenyum shirt.png"/>
+<h3>Schadenyum Shirt</h3>
+<p>24.99 CHF</p>
+<p>Schadenyum Shirt: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Schadenyum Shirt" data-price="24.99 CHF" onclick="addToCart({name: 'Schadenyum Shirt', price: 24.99, image: './assets/new merch without background/Oberteile/schadenyum shirt.png'})">Zum Warenkorb hinzufügen</button>
+</div>
 </div>
 </div>
 <div class="container">
-<a class="button" href="index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; background-color: #3399ff; color: white; border-radius: 10px; font-size: 18px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease; margin: 30px auto;"><i class="fas fa-home"></i> Zurück zur Startseite</a>
+<h2>
+    Hosen
+   </h2>
+<div class="products-container">
+<div class="team-member">
+<img alt="Yum Boxers" src="./assets/new merch without background/Hosen/Yum Boxers.png"/>
+<h3>Yum Boxers</h3>
+<p>34.99 CHF</p>
+<p>Yum Boxers: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Yum Boxers" data-price="34.99 CHF" onclick="addToCart({name: 'Yum Boxers', price: 34.99, image: './assets/new merch without background/Hosen/Yum Boxers.png'})">Zum Warenkorb hinzufügen</button>
 </div>
-<script src="cart.js"></script></body>
+<div class="team-member">
+<img alt="Yum Jogging Hose" src="./assets/new merch without background/Hosen/Yum Jogging Hose.png"/>
+<h3>Yum Jogging Hose</h3>
+<p>39.99 CHF</p>
+<p>Yum Jogging Hose: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Yum Jogging Hose" data-price="39.99 CHF" onclick="addToCart({name: 'Yum Jogging Hose', price: 39.99, image: './assets/new merch without background/Hosen/Yum Jogging Hose.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Yum Thigh Highs" src="./assets/new merch without background/Hosen/Yum Thigh Highs.png"/>
+<h3>Yum Thigh Highs</h3>
+<p>39.99 CHF</p>
+<p>Yum Thigh Highs: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Yum Thigh Highs" data-price="39.99 CHF" onclick="addToCart({name: 'Yum Thigh Highs', price: 39.99, image: './assets/new merch without background/Hosen/Yum Thigh Highs.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+</div>
+</div>
+<div class="container">
+<h2>
+    Kopfbedeckung
+   </h2>
+<div class="products-container">
+<div class="team-member">
+<img alt="Oreoyum Beanie (text)" src="./assets/new merch without background/Kopfbedeckung/Oreoyum Beanie (Text).png"/>
+<h3>Oreoyum Beanie (text)</h3>
+<p>22.99 CHF</p>
+<p>Oreoyum Beanie (text): Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Oreoyum Beanie (text)" data-price="22.99 CHF" onclick="addToCart({name: 'Oreoyum Beanie (text)', price: 22.99, image: './assets/new merch without background/Kopfbedeckung/Oreoyum Beanie (Text).png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Cap" src="./assets/new merch without background/Kopfbedeckung/Oreoyum Cap.png"/>
+<h3>Oreoyum Cap</h3>
+<p>22.99 CHF</p>
+<p>Oreoyum Cap: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Oreoyum Cap" data-price="22.99 CHF" onclick="addToCart({name: 'Oreoyum Cap', price: 22.99, image: './assets/new merch without background/Kopfbedeckung/Oreoyum Cap.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Fischerhut (grosses Logo)" src="./assets/new merch without background/Kopfbedeckung/Oreoyum Fischerhut (Grosses Logo).png"/>
+<h3>Oreoyum Fischerhut (grosses Logo)</h3>
+<p>22.99 CHF</p>
+<p>Oreoyum Fischerhut (grosses Logo): Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Oreoyum Fischerhut (grosses Logo)" data-price="22.99 CHF" onclick="addToCart({name: 'Oreoyum Fischerhut (grosses Logo)', price: 22.99, image: './assets/new merch without background/Kopfbedeckung/Oreoyum Fischerhut (Grosses Logo).png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Fischerhut (kleines Logo)" src="./assets/new merch without background/Kopfbedeckung/Oreoyum Fischerhut (Kleines Logo).png"/>
+<h3>Oreoyum Fischerhut (kleines Logo)</h3>
+<p>22.99 CHF</p>
+<p>Oreoyum Fischerhut (kleines Logo): Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Oreoyum Fischerhut (kleines Logo)" data-price="22.99 CHF" onclick="addToCart({name: 'Oreoyum Fischerhut (kleines Logo)', price: 22.99, image: './assets/new merch without background/Kopfbedeckung/Oreoyum Fischerhut (Kleines Logo).png'})">Zum Warenkorb hinzufügen</button>
+</div>
+</div>
+</div>
+<div class="container">
+<h2>
+    Taschen
+   </h2>
+<div class="products-container">
+<div class="team-member">
+<img alt="Lgbtqyum Tasche" src="./assets/new merch without background/Taschen/LGBTQyum Tasche.png"/>
+<h3>Lgbtqyum Tasche</h3>
+<p>17.99 CHF</p>
+<p>Lgbtqyum Tasche: Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="Lgbtqyum Tasche" data-price="17.99 CHF" onclick="addToCart({name: 'Lgbtqyum Tasche', price: 17.99, image: './assets/new merch without background/Taschen/LGBTQyum Tasche.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreo Tasche 2nd Edition" src="./assets/new merch without background/Taschen/Oreo Tasche 2nd Edition.png"/>
+<h3>Oreo Tasche 2nd Edition</h3>
+<p>14.99 CHF</p>
+<p>Oreo Tasche 2nd Edition: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Oreo Tasche 2nd Edition" data-price="14.99 CHF" onclick="addToCart({name: 'Oreo Tasche 2nd Edition', price: 14.99, image: './assets/new merch without background/Taschen/Oreo Tasche 2nd Edition.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreo Tasche" src="./assets/new merch without background/Taschen/Oreo Tasche.png"/>
+<h3>Oreo Tasche</h3>
+<p>14.99 CHF</p>
+<p>Oreo Tasche: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Oreo Tasche" data-price="14.99 CHF" onclick="addToCart({name: 'Oreo Tasche', price: 14.99, image: './assets/new merch without background/Taschen/Oreo Tasche.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreolove Tasche" src="./assets/new merch without background/Taschen/Oreolove Tasche.png"/>
+<h3>Oreolove Tasche</h3>
+<p>14.99 CHF</p>
+<p>Oreolove Tasche: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Oreolove Tasche" data-price="14.99 CHF" onclick="addToCart({name: 'Oreolove Tasche', price: 14.99, image: './assets/new merch without background/Taschen/Oreolove Tasche.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Tasche (gold Logo)" src="./assets/new merch without background/Taschen/Oreoyum Tasche (Gold Logo).png"/>
+<h3>Oreoyum Tasche (gold Logo)</h3>
+<p>17.99 CHF</p>
+<p>Oreoyum Tasche (gold Logo): Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="Oreoyum Tasche (gold Logo)" data-price="17.99 CHF" onclick="addToCart({name: 'Oreoyum Tasche (gold Logo)', price: 17.99, image: './assets/new merch without background/Taschen/Oreoyum Tasche (Gold Logo).png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Tasche" src="./assets/new merch without background/Taschen/Oreoyum Tasche.png"/>
+<h3>Oreoyum Tasche</h3>
+<p>14.99 CHF</p>
+<p>Oreoyum Tasche: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Oreoyum Tasche" data-price="14.99 CHF" onclick="addToCart({name: 'Oreoyum Tasche', price: 14.99, image: './assets/new merch without background/Taschen/Oreoyum Tasche.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Team Oreoyum Tasche" src="./assets/new merch without background/Taschen/Team Oreoyum Tasche.png"/>
+<h3>Team Oreoyum Tasche</h3>
+<p>14.99 CHF</p>
+<p>Team Oreoyum Tasche: Perfekt für Fans, die nicht nur Mode, sondern auch eine Botschaft tragen möchten.</p>
+<button class="add-to-cart" data-name="Team Oreoyum Tasche" data-price="14.99 CHF" onclick="addToCart({name: 'Team Oreoyum Tasche', price: 14.99, image: './assets/new merch without background/Taschen/Team Oreoyum Tasche.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+</div>
+</div>
+<div class="container">
+<h2>
+    Tassen
+   </h2>
+<div class="products-container">
+<div class="team-member">
+<img alt="Oreoyum Tasse" src="./assets/new merch without background/Tassen/Oreoyum Tasse.png"/>
+<h3>Oreoyum Tasse</h3>
+<p>12.99 CHF</p>
+<p>Oreoyum Tasse: Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Oreoyum Tasse" data-price="12.99 CHF" onclick="addToCart({name: 'Oreoyum Tasse', price: 12.99, image: './assets/new merch without background/Tassen/Oreoyum Tasse.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Team Oreoyum Tasse" src="./assets/new merch without background/Tassen/Team Oreoyum Tasse.png"/>
+<h3>Team Oreoyum Tasse</h3>
+<p>12.99 CHF</p>
+<p>Team Oreoyum Tasse: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Team Oreoyum Tasse" data-price="12.99 CHF" onclick="addToCart({name: 'Team Oreoyum Tasse', price: 12.99, image: './assets/new merch without background/Tassen/Team Oreoyum Tasse.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+</div>
+</div>
+<div class="container">
+<h2>
+    Booster Packs
+   </h2>
+<div class="products-container">
+</div>
+</div>
+<div class="container">
+<h2>
+    Weiteres
+   </h2>
+<div class="products-container">
+<div class="team-member">
+<img alt="Frogyum Plush" src="./assets/new merch without background/Weiteres/Frogyum Plush.png"/>
+<h3>Frogyum Plush</h3>
+<p>17.99 CHF</p>
+<p>Frogyum Plush: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Frogyum Plush" data-price="17.99 CHF" onclick="addToCart({name: 'Frogyum Plush', price: 17.99, image: './assets/new merch without background/Weiteres/Frogyum Plush.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Flasche" src="./assets/new merch without background/Weiteres/Oreoyum Flasche.png"/>
+<h3>Oreoyum Flasche</h3>
+<p>17.99 CHF</p>
+<p>Oreoyum Flasche: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Oreoyum Flasche" data-price="17.99 CHF" onclick="addToCart({name: 'Oreoyum Flasche', price: 17.99, image: './assets/new merch without background/Weiteres/Oreoyum Flasche.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Glass" src="./assets/new merch without background/Weiteres/Oreoyum Glass.png"/>
+<h3>Oreoyum Glass</h3>
+<p>17.99 CHF</p>
+<p>Oreoyum Glass: Hol dir dieses Highlight für deinen Kleiderschrank – limitiert und exklusiv.</p>
+<button class="add-to-cart" data-name="Oreoyum Glass" data-price="17.99 CHF" onclick="addToCart({name: 'Oreoyum Glass', price: 17.99, image: './assets/new merch without background/Weiteres/Oreoyum Glass.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Gold Sticker" src="./assets/new merch without background/Weiteres/Oreoyum Gold Sticker.png"/>
+<h3>Oreoyum Gold Sticker</h3>
+<p>9.99 CHF</p>
+<p>Oreoyum Gold Sticker: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Oreoyum Gold Sticker" data-price="9.99 CHF" onclick="addToCart({name: 'Oreoyum Gold Sticker', price: 9.99, image: './assets/new merch without background/Weiteres/Oreoyum Gold Sticker.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Pins" src="./assets/new merch without background/Weiteres/Oreoyum Pins.png"/>
+<h3>Oreoyum Pins</h3>
+<p>13.99 CHF</p>
+<p>Oreoyum Pins: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Oreoyum Pins" data-price="13.99 CHF" onclick="addToCart({name: 'Oreoyum Pins', price: 13.99, image: './assets/new merch without background/Weiteres/Oreoyum Pins.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Oreoyum Sticker" src="./assets/new merch without background/Weiteres/Oreoyum Sticker.png"/>
+<h3>Oreoyum Sticker</h3>
+<p>13.99 CHF</p>
+<p>Oreoyum Sticker: Kombiniert Komfort mit kreativem Ausdruck – ein echtes Statement-Piece.</p>
+<button class="add-to-cart" data-name="Oreoyum Sticker" data-price="13.99 CHF" onclick="addToCart({name: 'Oreoyum Sticker', price: 13.99, image: './assets/new merch without background/Weiteres/Oreoyum Sticker.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+<div class="team-member">
+<img alt="Keksdose Removebg Preview" src="./assets/new merch without background/Weiteres/keksdose-removebg-preview.png"/>
+<h3>Keksdose Removebg Preview</h3>
+<p>9.99 CHF</p>
+<p>Keksdose Removebg Preview: Ein einzigartiges Design für alle, die Stil und Persönlichkeit zeigen wollen.</p>
+<button class="add-to-cart" data-name="Keksdose Removebg Preview" data-price="9.99 CHF" onclick="addToCart({name: 'Keksdose Removebg Preview', price: 9.99, image: './assets/new merch without background/Weiteres/keksdose-removebg-preview.png'})">Zum Warenkorb hinzufügen</button>
+</div>
+</div>
+</div>
+<div class="container">
+<a class="button" href="index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; background-color: #3399ff; color: white; border-radius: 10px; font-size: 18px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease; margin: 30px auto;">
+<i class="fas fa-home">
+</i>
+    Zurück zur Startseite
+   </a>
+</div>
+<script src="cart.js">
+</script>
+</body>
 </html>
