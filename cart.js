@@ -1,5 +1,4 @@
-
-function addToCart(product) {
+async function addToCart(product) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existingIndex = cart.findIndex(item => item.name === product.name);
 
@@ -46,7 +45,7 @@ function loadCartItems() {
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const totalDiv = document.createElement('div');
     totalDiv.innerHTML = `<h2>Gesamtsumme: ${total.toFixed(2)} CHF</h2>
-        <button onclick="checkout()">🧾 Bestellung abschicken</button>`;
+        <button onclick="checkStockAndCheckout()">🧾 Bestellung abschicken</button>`;
     container.appendChild(totalDiv);
 }
 
@@ -67,33 +66,39 @@ function removeFromCart(index) {
     loadCartItems();
 }
 
-function checkout() {
+async function checkStockAndCheckout() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length === 0) {
         alert("Dein Warenkorb ist leer.");
         return;
     }
 
-    let summary = "🧾 Bestellübersicht:\n\n";
-    let total = 0;
-    cart.forEach(item => {
-        const lineTotal = item.price * item.quantity;
-        summary += `• ${item.name} x${item.quantity} = ${lineTotal.toFixed(2)} CHF\n`;
-        total += lineTotal;
-    });
-    summary += `\n💰 Gesamtsumme: ${total.toFixed(2)} CHF\n\nVielen Dank für deine Bestellung!`;
+    const response = await fetch("http://localhost:3000/stock");
+    const stockList = await response.json();
 
-    
+    const insufficient = cart.filter(item => {
+        const found = stockList.find(p => p.name === item.name);
+        return !found || found.stock < item.quantity;
+    });
+
+    if (insufficient.length > 0) {
+        alert("Einige Artikel haben nicht genügend Lagerbestand.");
+        return;
+    }
+
+    // Bestellung abschicken
+    await fetch("http://localhost:3000/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cart)
+    });
+
+    // Bestellung lokal speichern
     localStorage.setItem('lastOrder', JSON.stringify(cart));
-
     let history = JSON.parse(localStorage.getItem('orderHistory')) || [];
-    history.push({
-        timestamp: new Date().toISOString(),
-        items: cart
-    });
+    history.push({ timestamp: new Date().toISOString(), items: cart });
     localStorage.setItem('orderHistory', JSON.stringify(history));
-    
     localStorage.removeItem('cart');
+
     window.location.href = 'payment.html';
-    loadCartItems();
 }
