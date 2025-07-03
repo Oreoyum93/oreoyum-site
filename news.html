@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Oreoyum News</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .news-block {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .news-header {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #3399ff;
+        }
+        .news-preview {
+            font-size: 16px;
+            color: #ccc;
+        }
+        .news-content {
+            display: none;
+            margin-top: 10px;
+        }
+        .news-images {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .news-images img {
+            width: 30%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .toggle-btn {
+            margin-top: 10px;
+            background-color: #3399ff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    
+        @media (max-width: 768px) {
+            a.button { width: 90% !important; }
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        
+@media (max-width: 768px) {
+    .team-member, .container, .news-block {
+        width: 90% !important;
+        margin: 0 auto 20px auto !important;
+    }
+
+    .products-container {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    button, .button, a.button {
+        width: 90% !important;
+        font-size: 16px !important;
+        padding: 12px !important;
+        text-align: center !important;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    .image-group img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .team-member img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    h1, h2 {
+        font-size: 1.4em !important;
+        text-align: center !important;
+    }
+}
+</style>
+<script>
+        function toggleNews(id) {
+            const content = document.getElementById('news-' + id);
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body><a href="cart.html" style="position: fixed; top: 20px; right: 20px; z-index: 999; background-color: #222; color: white; padding: 10px 15px; border-radius: 8px; text-decoration: none;">🛒 Warenkorb</a><img alt="News Banner" class="banner" src="./assets/images/banner_placeholder.jpg" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 0 0 12px 12px; margin-bottom: 30px;"/>
+<h1>Oreoyum News &amp; Updates</h1>
+<div class="news-block">
+<div class="news-header">Neue Produktlinie gelauncht!</div>
+<div class="news-preview">Wir haben aufregende neue Produkte in unseren Shop aufgenommen...</div>
+<button class="toggle-btn" onclick="toggleNews('1')">Mehr anzeigen</button>
+<div class="news-content" id="news-1">
+<p>Heute freuen wir uns, unsere brandneue Produktlinie vorzustellen, darunter Tech-Accessoires und exklusive Shirts.</p>
+<div class="news-images">
+<img alt="News Image 1" src="./assets/images/news1a.jpg"/>
+<img alt="News Image 2" src="./assets/images/news1b.jpg"/>
+<img alt="News Image 3" src="./assets/images/news1c.jpg"/>
+</div>
+</div>
+</div>
+<div class="news-block">
+<div class="news-header">Event-Rückblick: Oreoyum 2025</div>
+<div class="news-preview">Das Oreoyum Event war ein voller Erfolg – danke an alle!</div>
+<button class="toggle-btn" onclick="toggleNews('2')">Mehr anzeigen</button>
+<div class="news-content" id="news-2">
+<p>Das diesjährige Event brachte über 300 Besucher zusammen mit Präsentationen, Workshops und einem fantastischen Teamgeist.</p>
+<div class="news-images">
+<img alt="News Image 1" src="./assets/images/news2a.jpg"/>
+<img alt="News Image 2" src="./assets/images/news2b.jpg"/>
+<img alt="News Image 3" src="./assets/images/news2c.jpg"/>
+</div>
+</div>
+</div>
+<div class="news-block"><div class="news-header">Oreoyum wächst weiter: Neue Abteilungen, neue Website – und Pokémon für alle!</div><div class="news-preview">Mit fünf neuen Abteilungen, überarbeiteter Website und einem Schuss Pokémon-Humor startet Oreoyum in die Zukunft.</div><button class="toggle-btn" onclick="toggleNews('3')">Mehr anzeigen</button><div class="news-content" id="news-3"><p>Die aufstrebende Firma Oreoyum schlägt ein neues Kapitel auf: Mit frischem Wind und klarer Struktur hat das Unternehmen gleich fünf neue Abteilungen gegründet. In den Bereichen Marketing, Design, Produktion, Beratung und IT arbeiten nun jeweils drei motivierte Mitarbeiter, die gemeinsam die nächsten Schritte in der Erfolgsgeschichte von Oreoyum gestalten.<br/><br/>Parallel zum strukturellen Wachstum wurde auch die Website komplett neu gestaltet. Moderner, nutzerfreundlicher und mit mehr Persönlichkeit präsentiert sich Oreoyum nun online – ein deutliches Zeichen für den Aufbruch in eine neue Ära.<br/><br/>Und als wäre das nicht genug, sorgt ein interner Clou für gute Laune im Team: Jeder Mitarbeiter muss sich ab sofort ein Pokémon als Profilbild aussuchen. Ob Pikachu, Glurak oder Evoli – die virtuelle Pokémon-Galerie sorgt für Schmunzeln und stärkt gleichzeitig den Teamgeist.<br/><br/>„Wir sind stolz auf das, was wir auf die Beine stellen, und das ist erst der Anfang“, so die Geschäftsführung. Weitere spannende Neuerungen und kreative Projekte stehen bereits in den Startlöchern.<br/><br/>Mit Struktur, Stil und einer Prise Humor zeigt Oreoyum: Die Zukunft wird nicht nur professionell – sondern auch bunt und ein bisschen nerdig.</p><div class="news-images"><img alt="News Image" src="./assets/images/news3a.jpg"/><img alt="News Image" src="./assets/images/news3b.jpg"/><img alt="News Image" src="./assets/images/news3c.jpg"/></div></div></div><div style="text-align: center; margin-top: 40px;"></div>
+<div class="container">
+<a class="button" href="index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; background-color: #3399ff; color: white; border-radius: 10px; font-size: 18px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease; margin: 30px auto;"><i class="fas fa-home"></i> Zurück zur Startseite</a>
+</div></body></html>

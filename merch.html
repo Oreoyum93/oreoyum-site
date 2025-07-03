@@ -37,7 +37,7 @@
             padding: 15px;
             border-radius: 10px;
             width: 300px;
-            height: 500px;
+            min-height: 500px; height: auto;
         }
         .team-member img {
             width: 100%;
@@ -59,7 +59,53 @@
         button:hover {
             background-color: #4687c1;
         }
-    </style>
+    
+        @media (max-width: 768px) {
+            a.button { width: 90% !important; }
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        
+@media (max-width: 768px) {
+    .team-member, .container, .news-block {
+        width: 90% !important;
+        margin: 0 auto 20px auto !important;
+    }
+
+    .products-container {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    button, .button, a.button {
+        width: 90% !important;
+        font-size: 16px !important;
+        padding: 12px !important;
+        text-align: center !important;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    .image-group img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .team-member img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    h1, h2 {
+        font-size: 1.4em !important;
+        text-align: center !important;
+    }
+}
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 </head>
 <body><a href="cart.html" style="position: fixed; top: 20px; right: 20px; z-index: 999; background-color: #222; color: white; padding: 10px 15px; border-radius: 8px; text-decoration: none;">🛒 Warenkorb</a>
 <img alt="Merch Banner" src="./assets/images/oreoshop.jpg" style="width: 100%; max-height: 300px; object-fit: cover;"/>
@@ -71,23 +117,23 @@
 <h3>Yum T-Shirt 1st Edition (White)</h3>
 <p>24.99 CHF</p>
 <p>Die erste Version des Yum T-Shirts ist perfekt wenn du im Sommer am Strand gemobbt werden willst! Ich meine wer trägt sowas?</p>
-<div style="margin-top: 10px; display: flex; justify-content: center;"></div><div style="margin-top: 15px; display: flex; justify-content: center;"><button onclick="addToCart({ name: 'Yum T-Shirt 1st Edition (White)', price: 24.99, image: './assets/images/yum_tshirt-removebg-preview.png' })" style="background-color: #3399ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">In den Warenkorb</button></div></div>
+<div style="margin-top: 15px; display: flex; justify-content: center;"><button onclick="addToCart({ name: 'Yum T-Shirt 1st Edition (White)', price: 24.99, image: './assets/images/yum_tshirt-removebg-preview.png' })" style="background-color: #3399ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">In den Warenkorb</button></div></div>
 <div class="team-member">
 <img alt="Yum Hoddie 1st Edition (Black)" src="./assets/images/yum_hoddie-removebg-preview.png"/>
 <h3>Yum Hoddie 1st Edition (Black)</h3>
 <p>39.99 CHF</p>
 <p>Ein stylischer Hoddie mit höchster Qualität. Gut um dich im Winter warm zu halten und deine Hacking-Skills zu verbessern!</p>
-<div style="margin-top: 10px; display: flex; justify-content: center;"></div><div style="margin-top: 15px; display: flex; justify-content: center;"><button onclick="addToCart({ name: 'Yum Hoddie 1st Edition (Black)', price: 39.99, image: './assets/images/yum_hoddie-removebg-preview.png' })" style="background-color: #3399ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">In den Warenkorb</button></div></div>
+<div style="margin-top: 15px; display: flex; justify-content: center;"><button onclick="addToCart({ name: 'Yum Hoddie 1st Edition (Black)', price: 39.99, image: './assets/images/yum_hoddie-removebg-preview.png' })" style="background-color: #3399ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">In den Warenkorb</button></div></div>
 <div class="team-member">
 <img alt="Yum T-Shirt 2nd Edition (Black)" src="./assets/images/yumv2-removebg-preview.png"/>
 <h3>Yum T-Shirt 2nd Edition (Blue)</h3>
 <p>29.99 CHF</p>
 <p>Eine bessere Version des Yum T-Shirts ist da! Zeige jedem deine Liebe für Yum mit dem Black Edition T-Shirt!</p>
-<div style="margin-top: 10px; display: flex; justify-content: center;"></div><div style="margin-top: 15px; display: flex; justify-content: center;"><button onclick="addToCart({ name: 'Yum T-Shirt 2nd Edition (Blue)', price: 29.99, image: './assets/images/yumv2-removebg-preview.png' })" style="background-color: #3399ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">In den Warenkorb</button></div></div>
+<div style="margin-top: 15px; display: flex; justify-content: center;"><button onclick="addToCart({ name: 'Yum T-Shirt 2nd Edition (Blue)', price: 29.99, image: './assets/images/yumv2-removebg-preview.png' })" style="background-color: #3399ff; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold;">In den Warenkorb</button></div></div>
 </div>
 </div>
 <div class="container">
-<a href="index.html"><button>Zurück zur Startseite</button></a>
+<a class="button" href="index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; background-color: #3399ff; color: white; border-radius: 10px; font-size: 18px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease; margin: 30px auto;"><i class="fas fa-home"></i> Zurück zur Startseite</a>
 </div>
 <script src="cart.js"></script></body>
 </html>

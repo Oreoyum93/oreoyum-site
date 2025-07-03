@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oreoyum - IT & Religion</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Oreoyum - IT &amp; Religion</title>
+<style>
         body {
             background-color: #121212; /* Dunkler Hintergrund */
             color: #c9d1d9; /* Helle Schriftfarbe */
@@ -93,89 +94,126 @@
         .button-container button {
             width: 150px; /* Optional, wenn du alle Buttons gleich groß haben willst */
         }
-    </style>
+    
+    @media (max-width: 768px) {
+        h1 { font-size: 28px !important; }
+        p { font-size: 15px !important; }
+        a.button { width: 90% !important; }
+    }
+
+    .button:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+    
+@media (max-width: 768px) {
+    .team-member, .container, .news-block {
+        width: 90% !important;
+        margin: 0 auto 20px auto !important;
+    }
+
+    .products-container {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    button, .button, a.button {
+        width: 90% !important;
+        font-size: 16px !important;
+        padding: 12px !important;
+        text-align: center !important;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    .image-group img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .team-member img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    h1, h2 {
+        font-size: 1.4em !important;
+        text-align: center !important;
+    }
+}
+</style>
 <script src="cart.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 </head>
-<body>
+<body><a href="cart.html" style="position: fixed; top: 20px; right: 20px; z-index: 999; background-color: #222; color: white; padding: 10px 15px; border-radius: 8px; text-decoration: none;">🛒 Warenkorb</a>
 <div style="position: fixed; top: 10px; right: 10px; z-index: 999;">
-    <a href="cart.html" style="color: white; text-decoration: none; font-size: 20px;">
-        🛒 Warenkorb
-    </a>
 </div>
-
-    <h1>Willkommen bei Oreoyum</h1>
-    <div>
-        <img src="./assets/images/oreoyum_von_temu-removebg-preview.png" alt="Willkommen bei Oreoyum">
-    </div>
-    <p>Die IT-Lösung mit spirituellem Touch 🚀✨</p>
-
-    <!-- Leistungen Abschnitt -->
-    <div class="container">
-        <h2>Unsere Leistungen</h2>
-        
-        <!-- Softwareentwicklung -->
-        <div class="service">
-            <img src="https://th.bing.com/th/id/OIP.1VGbIetElQMXely9uXdROwHaE7?rs=1&pid=ImgDetMain" alt="Softwareentwicklung">
-            <div>
-                <h3>💻 Softwareentwicklung</h3>
-                <p>Oreoyum – Deine digitale Zukunft, heute! 
+<h1 style="font-size: 42px; color: #ffffff; text-align: center; margin-top: 40px;">Willkommen bei Oreoyum</h1>
+<div>
+<img alt="Willkommen bei Oreoyum" src="./assets/images/oreoyum_von_temu-removebg-preview.png"/>
+</div>
+<p style="color: #cccccc; font-size: 16px; line-height: 1.6;">Die IT-Lösung mit spirituellem Touch 🚀✨</p>
+<!-- Leistungen Abschnitt -->
+<div class="container">
+<h2>Unsere Leistungen</h2>
+<!-- Softwareentwicklung -->
+<div class="service">
+<img alt="Softwareentwicklung" src="https://th.bing.com/th/id/OIP.1VGbIetElQMXely9uXdROwHaE7?rs=1&amp;pid=ImgDetMain"/>
+<div>
+<h3>💻 Softwareentwicklung</h3>
+<p style="color: #cccccc; font-size: 16px; line-height: 1.6;">Oreoyum – Deine digitale Zukunft, heute! 
                     Mit Oreoyum wirst du zum digitalen Trendsetter! Wir entwickeln maßgeschneiderte Softwarelösungen, die deine Ideen in die Realität katapultieren. Egal ob App, Plattform oder Webanwendung – wir liefern smarte, schnelle und effiziente Lösungen.
                     </p>
-                <p>Ready für die nächste Stufe? Let’s code it! 💻✨</p>
-            </div>
-        </div>
-        
-        <!-- IT-Support -->
-        <div class="service">
-            <img src="https://www.itcompanydubai.com/wp-content/uploads/2023/02/remote-support-disputes.jpg" alt="IT-Support">
-            <div>
-                <h3>🛠 IT-Support</h3>
-                <p>Oreoyum – Dein IT-Support, immer am Puls der Zeit! 
+<p style="color: #cccccc; font-size: 16px; line-height: 1.6;">Ready für die nächste Stufe? Let’s code it! 💻✨</p>
+</div>
+</div>
+<!-- IT-Support -->
+<div class="service">
+<img alt="IT-Support" src="https://www.itcompanydubai.com/wp-content/uploads/2023/02/remote-support-disputes.jpg"/>
+<div>
+<h3>🛠 IT-Support</h3>
+<p style="color: #cccccc; font-size: 16px; line-height: 1.6;">Oreoyum – Dein IT-Support, immer am Puls der Zeit! 
                     Probleme mit deiner Technik? Kein Stress! Oreoyum sorgt dafür, dass deine IT rund läuft – schnell, zuverlässig und immer auf dem neuesten Stand. Von der Fehlerbehebung bis zur Systemoptimierung – wir kümmern uns um alles, damit du dich auf das Wesentliche konzentrieren kannst.
                     </p>
-                <p>Deine Technik. Unser Support. 👨‍💻🔧</p>
-            </div>
-        </div>
-        
-        <!-- Cloud-Lösungen -->
-        <div class="service">
-            <img src="https://www.it-daily.net/wp-content/uploads/2022/05/Cloud-Computing-Shutterstock-1919374457-1920.jpg" alt="Cloud-Lösungen">
-            <div>
-                <h3>☁ Cloud-Lösungen</h3>
-                <p>Oreoyum – Deine Zukunft in der Cloud! 
+<p style="color: #cccccc; font-size: 16px; line-height: 1.6;">Deine Technik. Unser Support. 👨‍💻🔧</p>
+</div>
+</div>
+<!-- Cloud-Lösungen -->
+<div class="service">
+<img alt="Cloud-Lösungen" src="https://www.it-daily.net/wp-content/uploads/2022/05/Cloud-Computing-Shutterstock-1919374457-1920.jpg"/>
+<div>
+<h3>☁ Cloud-Lösungen</h3>
+<p style="color: #cccccc; font-size: 16px; line-height: 1.6;">Oreoyum – Deine Zukunft in der Cloud! 
                     Mit Oreoyum hebst du deine IT in die Cloud! Skalierbar, sicher und immer verfügbar – unsere Cloud-Lösungen passen sich deinen Bedürfnissen an. Spar dir den Platz auf dem Server und setz auf die Flexibilität der Cloud, wo du alles jederzeit und überall nutzen kannst.
                     </p>
-                <p>Sicher. Flexibel. Oreoyum Cloud. 🌐🚀</p>
-            </div>
-        </div>
-        
-        <!-- Religiöse Beratung -->
-        <div class="service">
-            <img src="./assets/images/religion.png" alt="Religiöse Beratung">
-            <div>
-                <h3>🍪 Religiöse Beratung</h3>
-                <p>Treten Sie noch heute der Oreoyum Religion bei. Wir haben unseren Prophäten Marc Liesch und insgesamt 10 Mitglieder! </p>
-                <p>Falls Sie das Anspricht schreiben Sie doch eine Mail an: Laciv@oreoyum.local</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="sponsor">
-        <h2>Unser Sponsor</h2>
-        <p>Vielen Dank an unseren Sponsor für die Unterstützung!</p>
-        <div>
-            <h3>Sponsor Name: Liesch Artificial's</h3>
-            <img src="./assets/images/Banner.png" alt="Sponsor Banner">
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="button-container">
-            <a href="team.html"><button>Zum Team</button></a>
-            <a href="software.html"><button>Zur Software</button></a>
-            <a href="hardware.html"><button>Zur Hardware</button></a>
-            <a href="merch.html"><button>Zum Merch</button></a>
-        </div>
-    </div>
-</body>
+<p style="color: #cccccc; font-size: 16px; line-height: 1.6;">Sicher. Flexibel. Oreoyum Cloud. 🌐🚀</p>
+</div>
+</div>
+<!-- Religiöse Beratung -->
+<div class="service">
+<img alt="Religiöse Beratung" src="./assets/images/religion.png"/>
+<div>
+<h3>🍪 Religiöse Beratung</h3>
+<p style="color: #cccccc; font-size: 16px; line-height: 1.6;">Treten Sie noch heute der Oreoyum Religion bei. Wir haben unseren Prophäten Marc Liesch und insgesamt 10 Mitglieder! </p>
+<p style="color: #cccccc; font-size: 16px; line-height: 1.6;">Falls Sie das Anspricht schreiben Sie doch eine Mail an: Laciv@oreoyum.local</p>
+</div>
+</div>
+</div>
+<div class="sponsor">
+<h2>Unser Sponsor</h2>
+<p style="color: #cccccc; font-size: 16px; line-height: 1.6;">Vielen Dank an unseren Sponsor für die Unterstützung!</p>
+<div>
+<h3>Sponsor Name: Liesch Artificial's</h3>
+<img alt="Sponsor Banner" src="./assets/images/Banner.png"/>
+</div>
+</div>
+<div class="container">
+<div class="button-container">
+<a class="button" href="team.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; background-color: #3399ff; color: white; border-radius: 10px; font-size: 18px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease; margin: 30px auto;"><i class="fas fa-users"></i> Zum Team</a>
+<a class="button" href="software.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; background-color: #3399ff; color: white; border-radius: 10px; font-size: 18px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease; margin: 30px auto;"><i class="fas fa-cubes"></i> Zur Software</a>
+<a class="button" href="hardware.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; background-color: #3399ff; color: white; border-radius: 10px; font-size: 18px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease; margin: 30px auto;"><i class="fas fa-microchip"></i> Zur Hardware</a>
+<a class="button" href="merch.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; background-color: #3399ff; color: white; border-radius: 10px; font-size: 18px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease; margin: 30px auto;"><i class="fas fa-tshirt"></i> Zum Merch</a>
+</div>
+</div>
+<div style="text-align: center; margin-top: 30px;"><a class="button" href="news.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; background-color: #3399ff; color: white; border-radius: 10px; font-size: 18px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease; margin: 30px auto;"><i class="fas fa-newspaper"></i> Zu den News</a></div></body>
 </html>

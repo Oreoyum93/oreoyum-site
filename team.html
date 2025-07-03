@@ -1,159 +1,214 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oreoyum - Unser Team</title>
-    <style>
+<meta charset="utf-8"/>
+<title>Unser Team</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
         body {
             background-color: #121212;
-            color: #c9d1d9;
+            color: white;
             font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
             padding: 0;
         }
-        h1, h2 {
-            color: #58a6ff;
-            font-size: 2rem;
-            margin-bottom: 10px;
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 36px;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 10px;
+        h2 {
+            text-align: center;
+            color: #3399ff;
+            font-size: 28px;
+            margin: 60px 0 20px;
+        }
+        .team-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 10px 30px;
         }
         .team-member {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
-            border-radius: 10px;
-            margin: 5px 0;
+            background-color: #1e1e1e;
+            border-radius: 16px;
+            padding: 30px 20px;
+            width: 260px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255,255,255,0.05);
         }
         .team-member img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
             border-radius: 50%;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
+            
         }
-        .team-member h3, .team-member p {
-            margin: 2px 0;
+        .team-member h3 {
+            font-size: 20px;
+            margin: 10px 0 6px;
         }
-        button {
-            background-color: #58a6ff;
-            color: white;
-            font-size: 16px;
-            border: none;
-            padding: 8px 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+        .team-member p {
+            font-size: 14px;
+            color: #bbb;
+            margin: 4px 0;
         }
-        button:hover {
-            background-color: #4687c1;
+    
+        @media (max-width: 768px) {
+            a.button { width: 90% !important; }
         }
-    </style>
+
+        .button:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        
+@media (max-width: 768px) {
+    .team-member, .container, .news-block {
+        width: 90% !important;
+        margin: 0 auto 20px auto !important;
+    }
+
+    .products-container {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    button, .button, a.button {
+        width: 90% !important;
+        font-size: 16px !important;
+        padding: 12px !important;
+        text-align: center !important;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    .image-group img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .team-member img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    h1, h2 {
+        font-size: 1.4em !important;
+        text-align: center !important;
+    }
+}
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 </head>
-<body>
-    <h1>Unser Team</h1>
-    <div class="container">
-        <h2>CEO</h2>
-        <div class="team-member">
-            <img src="./assets/images/marc_teams.png" alt="Marc">
-            <h3>Marc Liesch</h3>
-            <p>CEO</p>
-            <p>Email: Liema@oreoyum.local</p>
-        </div>
-        <div class="team-member">
-            <img src="https://source.unsplash.com/100x100/?person" alt="Ivan">
-            <h3>Ivan Lacic</h3>
-            <p>CEO</p>
-            <p>Email: Laciv@oreoyum.local</p>
-        </div>
-        <div class="team-member">
-            <img src="./assets/images/Tirza_teams.png" alt="Tirza">
-            <h3>Tirza Niklaus</h3>
-            <p>CEO</p>
-            <p>Email: Nikti@oreoyum.local</p>
-        </div>
-    </div>
-    <div class="container">
-        <h2>Support</h2>
-        <div class="team-member">
-            <img src="./assets/images/tenzee.png" alt="Tenzee">
-            <h3>Tenzee Yeega</h3>
-            <p>Support</p>
-            <p>Email: Yeete@oreoyum.local</p>
-        </div>
-        <div class="team-member">
-            <img src="https://berufsbildungscenter.ch/app/uploads/Datei-scaled.jpg" alt="Fabien">
-            <h3>Fabien Coachus</h3>
-            <p>Coach</p>
-            <p>Email: Coafa@oreoyum.local</p>
-        </div>
-    </div>
-    <div class="container">
-        <h2>Ausbildner</h2>
-        <div class="team-member">
-            <img src="./assets/images/marc_teams.png" alt="Marc">
-            <h3>Marc Liesch</h3>
-            <p>Ausbildner</p>
-            <p>Email: Liema@oreoyum.local</p>
-        </div>
-    </div>
-    <div class="container">
-        <h2>Developer</h2>
-        <div class="team-member">
-            <img src="./assets/images/Julian_teams.png" alt="Julian">
-            <h3>Julian Egger</h3>
-            <p>Developer</p>
-            <p>Email: Eggju@oreoyum.local</p>
-        </div>
-    </div>
-    <div class="container">
-        <h2>Hausmeister, Putzen etc.</h2>
-        <div class="team-member">
-            <img src="./assets/images/jannik.png" alt="Janik">
-            <h3>Janik Leuenberger</h3>
-            <p>Fensterputzer</p>
-            <p>Email: Leuja@oreoyum.local</p>
-        </div>
-        <div class="team-member">
-            <img src="./assets/images/timom.jpg" alt="Timo">
-            <h3>Timo Zbinden</h3>
-            <p>Hausmeister</p>
-            <p>Email: Zbiti@oreoyum.local</p>
-        </div>
-        <div class="team-member">
-            <img src="./assets/images/joel.png" alt="Joel">
-            <h3>Joel Bürki</h3>
-            <p>Putzman</p>
-            <p>Email: Bürjo@oreoyum.local</p>
-        </div>
-    </div>
-    <div class="container">
-        <h2>Lernender</h2>
-        <div class="team-member">
-            <img src="./assets/images/roman.jpg" alt="Roman">
-            <h3>Roman Schöpfer</h3>
-            <p>Lernender</p>
-            <p>Kinderbetreung EFZ</p>
-            <p>2. Lehrjahr</p>
-            <p>Email: Schro@oreoyum.local</p>
-        </div>
-        <div class="team-member">
-            <img src="./assets/images/illia.png" alt="Illia">
-            <h3>Illia Skladnyi</h3>
-            <p>Lernender</p>
-            <p>Pussy EFZ</p>
-            <p>3. Lehrjahr (Wiederholung)</p>
-            <p>Email: Sklil@oreoyum.local</p>
-        </div>
-    </div>
-    <div class="container">
-        <a href="index.html"><button>Zurück zur Startseite</button></a>
-    </div>
-</body>
-</html>
+<body><a href="cart.html" style="position: fixed; top: 20px; right: 20px; z-index: 999; background-color: #222; color: white; padding: 10px 15px; border-radius: 8px; text-decoration: none;">🛒 Warenkorb</a><img alt="Team Banner" class="banner" src="./assets/images/banner_placeholder.jpg" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 0 0 12px 12px; margin-bottom: 30px;"/>
+<h1>Unser Team</h1>
+<h2>Produktion</h2>
+<div class="team-row">
+<div class="team-member">
+<img alt="Luca Meier" src="./assets/images/placeholder.png"/>
+<h3>Luca Meier</h3>
+<p>Produktionsleiter</p>
+<p>luca.meier@example.com</p>
+</div>
+<div class="team-member">
+<img alt="Mara Keller" src="./assets/images/placeholder.png"/>
+<h3>Mara Keller</h3>
+<p>Montage</p>
+<p>mara.keller@example.com</p>
+</div>
+<div class="team-member">
+<img alt="Jonas Graf" src="./assets/images/placeholder.png"/>
+<h3>Jonas Graf</h3>
+<p>Fertigung</p>
+<p>jonas.graf@example.com</p>
+</div>
+</div>
+<h2>Design</h2>
+<div class="team-row">
+<div class="team-member">
+<img alt="Sophie Hartmann" src="./assets/images/placeholder.png"/>
+<h3>Sophie Hartmann</h3>
+<p>Grafikdesign</p>
+<p>sophie.hartmann@example.com</p>
+</div>
+<div class="team-member">
+<img alt="Noah Stein" src="./assets/images/placeholder.png"/>
+<h3>Noah Stein</h3>
+<p>UI/UX Design</p>
+<p>noah.stein@example.com</p>
+</div>
+<div class="team-member">
+<img alt="Clara Vogel" src="./assets/images/placeholder.png"/>
+<h3>Clara Vogel</h3>
+<p>Motion Design</p>
+<p>clara.vogel@example.com</p>
+</div>
+</div>
+<h2>Marketing</h2>
+<div class="team-row">
+<div class="team-member">
+<img alt="Felix König" src="./assets/images/placeholder.png"/>
+<h3>Felix König</h3>
+<p>Online-Marketing</p>
+<p>felix.koenig@example.com</p>
+</div>
+<div class="team-member">
+<img alt="Lena Maurer" src="./assets/images/placeholder.png"/>
+<h3>Lena Maurer</h3>
+<p>Social Media</p>
+<p>lena.maurer@example.com</p>
+</div>
+<div class="team-member">
+<img alt="Tom Bauer" src="./assets/images/placeholder.png"/>
+<h3>Tom Bauer</h3>
+<p>Kampagnenmanager</p>
+<p>tom.bauer@example.com</p>
+</div>
+</div>
+<h2>Beratung</h2>
+<div class="team-row">
+<div class="team-member">
+<img alt="Lea Schulz" src="./assets/images/placeholder.png"/>
+<h3>Lea Schulz</h3>
+<p>Kundenberatung</p>
+<p>lea.schulz@example.com</p>
+</div>
+<div class="team-member">
+<img alt="David Blum" src="./assets/images/placeholder.png"/>
+<h3>David Blum</h3>
+<p>Projektberatung</p>
+<p>david.blum@example.com</p>
+</div>
+<div class="team-member">
+<img alt="Nina Krüger" src="./assets/images/placeholder.png"/>
+<h3>Nina Krüger</h3>
+<p>Vertriebsassistenz</p>
+<p>nina.krueger@example.com</p>
+</div>
+</div>
+<h2>IT</h2>
+<div class="team-row">
+<div class="team-member">
+<img alt="Tim Schröder" src="./assets/images/placeholder.png"/>
+<h3>Tim Schröder</h3>
+<p>Systemadministrator</p>
+<p>tim.schroeder@example.com</p>
+</div>
+<div class="team-member">
+<img alt="Maja Hofmann" src="./assets/images/placeholder.png"/>
+<h3>Maja Hofmann</h3>
+<p>Softwareentwicklerin</p>
+<p>maja.hofmann@example.com</p>
+</div>
+<div class="team-member">
+<img alt="Ben Richter" src="./assets/images/placeholder.png"/>
+<h3>Ben Richter</h3>
+<p>IT Support</p>
+<p>ben.richter@example.com</p>
+</div>
+</div>
+<div style="text-align: center; margin-top: 40px;"><a class="button" href="index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; background-color: #3399ff; color: white; border-radius: 10px; font-size: 18px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease; margin: 30px auto;"><i class="fas fa-home"></i> Zurück zur Startseite</a></div></body></html>
