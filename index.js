@@ -8,12 +8,13 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-// MySQL Verbindung
+// MySQL Verbindung zu AWS RDS
 const db = mysql.createConnection({
-    host: 'your-db-hostname',
-    user: 'your-db-username',
-    password: 'your-db-password',
-    database: 'stock'
+    host: 'stock.cr45frqqtupo.us-east-1.rds.amazonaws.com',
+    user: 'admin',
+    password: 'Welcome$25',
+    database: 'stock',
+    port: 3306
 });
 
 db.connect(err => {
