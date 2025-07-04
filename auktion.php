@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
     <h1>Maël Autogramm Auktion</h1>
+    <img src="assets/Image (6).jfif" alt="Maël Autogramm" style="max-width: 300px; border-radius: 12px; margin-bottom: 20px;">
     <p id="currentBid">Aktuelles Gebot: <?= number_format($aktuellesGebot, 0, '.', "'") ?>.- CHF</p>
     <form method="post">
         <button type="submit">Gebot abgeben (+10'000)</button>
