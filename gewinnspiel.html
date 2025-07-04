@@ -3,20 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <title>Maël Verlosung</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: sans-serif; padding: 2em; background-color: #f9f9f9; }
-    form { background: white; padding: 2em; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    input, button { width: 100%; padding: 1em; margin-top: 1em; border-radius: 5px; border: 1px solid #ccc; }
-    button { background-color: #28a745; color: white; border: none; cursor: pointer; }
-    button:hover { background-color: #218838; }
+    body {
+        background-color: #121212;
+        color: #c9d1d9;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        color: #58a6ff;
+        font-size: 3rem;
+        margin-top: 40px;
+    }
+    .container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+    }
+    form {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2em;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    label, input, button {
+        display: block;
+        width: 100%;
+        margin-bottom: 1em;
+        font-size: 1.1rem;
+    }
+    input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background: #1f1f1f;
+        color: white;
+    }
+    button {
+        padding: 10px;
+        background-color: #28a745;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    button:hover {
+        background-color: #218838;
+    }
+    a.button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #58a6ff;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+    a.button:hover {
+        background-color: #4091e0;
+    }
   </style>
 </head>
 <body>
-  <h1 style="text-align:center;">🎁 Maël Verlosung</h1>
-  <form action="save_ticket.php" method="POST">
-    <label for="name">Dein Name:</label>
-    <input type="text" id="name" name="name" required>
-    <button type="submit">Ticket claimen</button>
-  </form>
+  <h1>🎁 Maël Verlosung</h1>
+  <div class="container">
+    <form action="save_ticket.php" method="POST">
+      <label for="name">Dein Name:</label>
+      <input type="text" id="name" name="name" required>
+      <button type="submit">Ticket claimen</button>
+    </form>
+    <a class="button" href="teilnehmer.php">Teilnehmer anzeigen</a>
+  </div>
 </body>
 </html>
