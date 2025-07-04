@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Maël Verlosung</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; background-color: #f9f9f9; }
+    form { background: white; padding: 2em; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input, button { width: 100%; padding: 1em; margin-top: 1em; border-radius: 5px; border: 1px solid #ccc; }
+    button { background-color: #28a745; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #218838; }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">🎁 Maël Verlosung</h1>
+  <form action="save_ticket.php" method="POST">
+    <label for="name">Dein Name:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="submit">Ticket claimen</button>
+  </form>
+</body>
+</html>
